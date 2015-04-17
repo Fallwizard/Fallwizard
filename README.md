@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/Fallwizard/Fallwizard.svg)](https://travis-ci.org/Fallwizard/Fallwizard)
 
+I like candy!!!
 
 Leveraging the best of the Spring Framework and Dropwizard.
 
