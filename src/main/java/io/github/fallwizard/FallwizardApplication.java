@@ -1,6 +1,5 @@
 package io.github.fallwizard;
 
-import io.github.fallwizard.auth.SpringSecurityAuthProvider;
 import io.github.fallwizard.configuration.FallwizardConfiguration;
 import io.github.fallwizard.configuration.SpringConfiguration;
 import io.github.fallwizard.configuration.SpringPropertyPlaceholderConfigurerConfiguration;
@@ -144,9 +143,6 @@ public class FallwizardApplication<T extends FallwizardConfiguration> extends Ap
 
                 }
             });
-            // Register the Spring Security Auth Provider
-            new SpringSecurityAuthProvider(applicationContext)
-                    .registerProvider(environment);
         }
 
     }

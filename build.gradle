@@ -5,7 +5,7 @@ apply plugin: 'spring-boot'
 apply plugin: 'groovy'
 apply plugin: 'signing'
 
-version = '0.8.1.0'
+version = '0.8.4.0'
 group = 'io.github.fallwizard'
 
 sourceCompatibility = '1.7'
@@ -27,12 +27,11 @@ repositories {
     maven { url 'http://repo.spring.io/release'}
 }
 
-
 dependencies {
 
-    ext.dropwizardVersion = '0.8.1'
+    ext.dropwizardVersion = '0.8.4'
     ext.springIoPlatformVersion = '1.1.2.RELEASE'
-    ext.jerseyVersion = '1.19'
+    ext.jerseyVersion = '2.22.1'
 
     versionManagement ("io.spring.platform:platform-versions:${ext.springIoPlatformVersion}@properties")
 
@@ -50,9 +49,7 @@ dependencies {
     compile 'org.springframework:spring-context'
 
     // jersey
-    compile "com.sun.jersey:jersey-core:${jerseyVersion}"
-    compile "com.sun.jersey:jersey-server:${jerseyVersion}"
-
+    compile "org.glassfish.jersey.core:jersey-server:${jerseyVersion}"
 
     testCompile("junit:junit:4.10")
 }
@@ -132,9 +129,9 @@ uploadArchives {
             // when we're ready to publish to Maven Central, use this repository instead
             // (make sure a project has been created for us first!)
             // see: http://central.sonatype.org/pages/ossrh-guide.html#create-a-ticket-with-sonatype
-            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-                authentication(userName: project.property("sonatypeUsername"), password: project.property("sonatypePassword"))
-            }
+            //repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+            //    authentication(userName: project.property("sonatypeUsername"), password: project.property("sonatypePassword"))
+            //}
         }
     }
 }
